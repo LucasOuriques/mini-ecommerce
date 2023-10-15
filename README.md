@@ -20,5 +20,5 @@ Dotenv: npm i dotenv
 ```bash
 nvm use 18 && npm i
 ```
-## Observação: Para esse projeto funcionar é necessário ter instalado o PostgreSQL instalado na maquina
+## Observação: Para esse projeto funcionar é necessário ter instalado o PostgreSQL instalado na máquina
  
