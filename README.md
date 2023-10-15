@@ -1,6 +1,6 @@
 # Ecommerce
 
-## Comandos necessários para rodar o projeto na maquina
+## Comandos necessários para rodar o projeto na máquina
 
 ```bash
 Driver-PostgreSQL: npm install sequelize pg pg-hstore
