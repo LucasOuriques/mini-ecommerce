@@ -36,6 +36,10 @@ export default db.define("endereco", {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  id_usuario: {
+    type: Sequelize.INTEGER,
+    allowNull: false
+  }
 },
 {
   timestamps: false,

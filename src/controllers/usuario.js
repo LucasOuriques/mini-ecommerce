@@ -2,6 +2,7 @@ import PessoaModel from "../models/usuario.js";
 import EnderecoModel from '../models/endereco.js';
 
 PessoaModel.belongsTo(EnderecoModel, { foreignKey: 'endereco_id' });
+EnderecoModel.belongsTo(PessoaModel, { foreignKey: 'id_usuario' });
 
 async function findAll(req, res) {
   try {
@@ -27,6 +28,7 @@ function findOne(req, res) {
 
 function addPessoa(req, res) {
   try {  
+    console.log('req', req.body)
     EnderecoModel.create({
       logradouro: req.body.endereco.logradouro,
       numero: req.body.endereco.numero,
@@ -36,14 +38,14 @@ function addPessoa(req, res) {
       pais: req.body.endereco.pais,
       complemento: req.body.endereco.complemento,
       cep: req.body.endereco.cep,
+      id_usuario: req.body.endereco.id_usuario
     }).then((enderecoCriado) => {
       PessoaModel.create({
         nome: req.body.nome,
-        idade: req.body.idade,
         dt_nascimento: req.body.dt_nascimento,
         codigo: req.body.codigo,
         tipo: req.body.tipo,
-        observacoes: req.body.observacoes,
+        senha: req.body.senha,
         endereco_id: enderecoCriado.id,
       }).then((result) => res.json(result));
     });
@@ -57,11 +59,10 @@ async function updatePessoa(req, res) {
     await PessoaModel.update(
       {
         nome: req.body.nome,
-        idade: req.body.idade,
         dt_nascimento: req.body.dt_nascimento,
         codigo: req.body.codigo,
         tipo: req.body.tipo,
-        observacoes: req.body.observacoes,
+        senha: req.body.senha,
         endereco_id: req.body.endereco_id,
       },
       {
@@ -80,6 +81,7 @@ async function updatePessoa(req, res) {
         pais: req.body.endereco.pais,
         complemento: req.body.endereco.complemento,
         cep: req.body.endereco.cep,
+        id_usuario: req.body.endereco.id_usuario
       },
       {
         where: {
