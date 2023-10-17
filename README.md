@@ -1,6 +1,8 @@
 # Ecommerce
 
-## Comandos necessários para rodar o projeto na máquina
+### Alunos: Higor José Clemes e Lucas Davi Caitano Ouriques
+
+### Comandos necessários para rodar o projeto na máquina
 
 ```bash
 Driver-PostgreSQL: npm install sequelize pg pg-hstore
@@ -20,5 +22,5 @@ Dotenv: npm i dotenv
 ```bash
 nvm use 18 && npm i
 ```
-## Observação: Para esse projeto funcionar é necessário ter instalado o PostgreSQL instalado na máquina
+### Observação: Para esse projeto funcionar é necessário ter instalado o PostgreSQL instalado na máquina
  

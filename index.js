@@ -5,6 +5,9 @@ import cors from 'cors';
 
 const app = express();
 
+const IP = 'localhost';
+const PORTA = 8080;
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -20,4 +23,4 @@ app.use(cors({
 
 db.sync(() => console.log(`Banco de dados conectado: ${process.env.DB_NAME}`));
 
-app.listen(8080, () => console.log("Servidor iniciado na porta 8080"));
+app.listen(PORTA, IP, () => console.log("Servidor iniciado na porta 8080"));
